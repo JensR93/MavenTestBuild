@@ -19,6 +19,11 @@ public class Auto {
 		Farbe = farbe;
 		KilometerStand=kilometerstand;
 	}
+
+	@Override
+	public String toString() {
+		return "Das Auto "+ Name+ " ist "+ KilometerStand +" km gefahren";
+	}
 	
 	public int Fahre(int kilometerstand)
 	{
