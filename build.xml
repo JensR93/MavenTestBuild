@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<project name="CCD" basedir=".">
+    <description>
+        Das CleanCode-Projekt mit einem ANT Skript
+    </description>
+
+    <!-- Erstellen der Ordner-Struktur -->
+    <target name="prepare" description="Erstellt das Buildverzeichnis, falls nicht vorhanden.">
+        <mkdir dir="build" />
+    </target>
+
+    <!-- Sourcen kompilieren mit Hilfe des Java Compilers -->
+    <target name="compile" depends="prepare" description="Kompiliert die Java-Dateien">
+        <javac srcdir="src" destdir="build" />
+    </target>
+
+    <!-- Programm ausführen  -->
+    <target name="run" depends="compile" description="Programm starten.">
+        <java classpath="build" classname="de.thiele.Main" fork="true"/>
+    </target>
+
+    <!-- Generierte Dateien entfernen -->
+    <target name="clean" description="Entfernt alle generierten Dateien und Verzeichnisse">
+        <delete dir="build" />
+    </target>
+
+</project>
